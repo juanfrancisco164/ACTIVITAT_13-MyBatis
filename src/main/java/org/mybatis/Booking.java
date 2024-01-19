@@ -3,7 +3,6 @@ package org.mybatis;
 import java.util.Date;
 
 public class Booking {
-    private int id;
     private int location_number;
     private int id_client;
     private String client;
@@ -16,14 +15,6 @@ public class Booking {
     private String hotel;
     private Date check_in;
     private int room_nights;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getLocation_number() {
         return location_number;
@@ -122,11 +113,9 @@ public class Booking {
     }
 
     public Double getPriceAsDouble() {
-        // Intentar convertir el String a Double
         try {
             return Double.parseDouble(price.replace(',', '.'));
         } catch (NumberFormatException e) {
-            // Manejar la excepción si la conversión falla
             return null;
         }
     }

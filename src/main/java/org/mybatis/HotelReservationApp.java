@@ -81,8 +81,8 @@ public class HotelReservationApp implements BookingMapper {
     private Booking createNewBooking() {
         Booking newBooking = new Booking();
         newBooking.setLocation_number(this.getLastLocationNumber() + 1);
-        System.out.println("Creando nueva reserva.......");
-        System.out.println("__________________________________________");
+        System.out.println("Creando nueva reserva...");
+        System.out.println();
         System.out.print("Inserta el id del cliente:" + "\n");
         newBooking.setClientId(scanner.nextInt());
         scanner.nextLine();
@@ -116,7 +116,7 @@ public class HotelReservationApp implements BookingMapper {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("__________________________________________");
+        System.out.println();
         return newBooking;
     }
 
@@ -311,7 +311,6 @@ public class HotelReservationApp implements BookingMapper {
 
     private void printBooking(Booking booking) {
         System.out.println("Detalles de la Reserva:");
-        System.out.println("ID: " + booking.getId());
         System.out.println("Número de Ubicación: " + booking.getLocation_number());
         System.out.println("ID del Cliente: " + booking.getClientId());
         System.out.println("Cliente: " + booking.getClient());

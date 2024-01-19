@@ -16,10 +16,8 @@
     </select>
 
     <select id="getBookingById" resultType="org.mybatis.Booking" parameterType="int">
-        SELECT *, REPLACE(price, ',', '.') AS price FROM activitat13 WHERE location_number = #{id}
+        SELECT *, REPLACE(price, ',', '.') AS price FROM activitat13 WHERE location_number = #{location_number}
     </select>
-
-
 
 
     <update id="updateBooking" parameterType="org.mybatis.Booking">
@@ -36,13 +34,13 @@
             hotel           = #{hotel},
             check_in        = #{check_in},
             room_nights     = #{room_nights}
-        WHERE location_number = #{id}
+        WHERE location_number = #{location_number}
     </update>
 
     <delete id="deleteBookingById" parameterType="int">
         DELETE
         FROM activitat13
-        WHERE location_number = #{id}
+        WHERE location_number = #{location_number}
     </delete>
 
     <delete id="deleteAllBookings">
